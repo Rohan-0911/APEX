@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fffaff;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+input, button, textarea, select {
+    font-family: inherit;
+}
+
+.navbar {
+    width: 100%;
+    height: 10vh;
+    background-color: #173753;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 7%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.logo {
+    border-radius: 50%;
+    height: 70%;
+    aspect-ratio: 1/1;
+    background-image: url(images/logo.png);
+    background-size: cover;
+    margin-right: auto;
+    margin-left: 5%;
+}
+
+.navbar .register {
+    padding-right: 5%;
+}
+
+.hero {
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 15px;
+}
+
+.apex-text {
+    font-size: 120px;
+    font-weight: 800;
+    justify-self: center;
+    text-align: center;
+    color: black;
+}
+
+.slogan {
+    padding-bottom: 20px;
+    font-size: 25px;
+    letter-spacing: 5px;
+    justify-self: center;
+    text-align: center;
+}
+
+.get-started {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    width: 20%;
+    padding: 20px;
+    margin-top: 25px;
+    border: 1px solid black;
+    background-color: transparent;
+    border-radius: 50px;
+    color: White;
+    font-size: 20px;
+    box-shadow: 1px 1px 10px black;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.get-started::after, .get-started::before {
+    --angle: 0deg;
+    content: '';
+    width: 150%;
+    height: 300%;
+    background: conic-gradient(from var(--angle), blue 0%, #00a9ff 50%, blue 100%);
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    animation: 2s spin linear infinite;
+}
+
+@keyframes spin {
+    to {
+        --angle: 360deg;
+    }
+}
+
+.features-flexbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 100px;
+    row-gap: 50px;
+    margin-top: 80px; 
+    margin-bottom: 50px;
+}
+
+.features-flexbox div {
+    width: 22%;
+    height: 40vh;
+    border-radius: 10px;
+    position: relative;
+}
+
+.features-flexbox div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    z-index: -1;
+    box-sizing: border-box;
+}
+
+.features-flexbox div::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    padding: 5px;
+    border-radius: 10px;
+    background: linear-gradient(#00a9ff 10%, #006aff 100%);
+    box-shadow: 15px 15px 5px grey;
+}
+
+.features-flexbox div:hover {
+    transform: translateX(-5px) translateY(-5px);
+} 
+
+.title {
+    margin: 15px;
+    padding: 5px;
+    background-color: #d3f0ff;/* rgb(218, 217, 217);*/
+    border-radius: 10px;
+    z-index: 1;
+    box-shadow: 0 0 5px black;
+    overflow-wrap: break-word;
+}
+
+.description {
+    font-size: 20px;
+    margin: 15px;
+    z-index: 1;
+}
+
+/* 2. ABOUT */
+
+.about_main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 80px;
+}
+
+.about_APEX {
+    width: 90%;
+    border: 2px solid black;
+    box-shadow: 0 0 30px white inset;
+    letter-spacing: 2px;
+    position: relative;
+    border-radius: 10px;
+    transition: all 0.4s ease-in-out;
+    background-color: #0f0f0f;
+    color: white;
+}
+
+.about_title {
+    margin: 50px 0 0 50px;
+    font-size: 35px;
+    color: white;
+    transition: all 0.4s ease-in-out;
+}
+
+.about_description {
+    margin: 30px 50px 30px 50px;
+    font-size: 25px;
+    transition: all 0.4s ease-in-out;
+}
+
+.about_APEX::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 0 20px black inset;
+  transition: all 0.4s ease-in-out;
+  z-index: -1;
+}
+
+.about_APEX:hover::before {
+  width: 100%;
+}
+
+.about_APEX:hover {
+    color: black;
+    scale: 1.01;
+}
+
+
+.about_APEX:hover .about_title {
+    color: black;
+}
+
+.team {
+    margin: 40px 0 40px 0;
+    width: 100%;
+}
+
+.our_team {
+    text-decoration: underline;
+    letter-spacing: 5px;
+    color: rgb(38, 38, 38);
+    font-size: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.members {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    row-gap: 50px;
+}
+
+.team_member {
+    font-size: 20px;
+    padding: 25px;
+    width: 40%;
+    color: rgb(0, 0, 0);
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black inset, 5px 5px 5px black;
+    position: relative;
+    transition: all 0.4s linear;
+    background-color: #0f0f0f;
+    color: white;
+    overflow-wrap: break-word;
+}
+
+.team_member a {
+    color: white;
+    transition: all 0.4s linear;
+}
+
+.team_member:hover, .team_member:hover a {
+    color: black;
+    scale: 1.02;
+    z-index: 10;
+}
+
+.team_member::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  border-radius: 10px;
+  background-color: white;
+  z-index: -1;
+  color: white;
+  transition: all 0.4s ease-in-out;
+}
+
+.team_member:hover::before {
+  width: 100%;
+}
