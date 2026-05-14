@@ -30,6 +30,11 @@ input, button, textarea, select {
 .navbar a {
     color: white;
     text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.navbar a:hover {
+    scale: 1.05;
 }
 
 .logo {
@@ -59,7 +64,8 @@ input, button, textarea, select {
     font-weight: 800;
     justify-self: center;
     text-align: center;
-    color: black;
+    color: black;    
+    transition: all 1s ease-in-out;
 }
 
 .slogan {
@@ -68,6 +74,7 @@ input, button, textarea, select {
     letter-spacing: 5px;
     justify-self: center;
     text-align: center;
+    transition: all 0.8s ease-in-out;
 }
 
 .get-started {
@@ -84,6 +91,7 @@ input, button, textarea, select {
     font-size: 20px;
     box-shadow: 1px 1px 10px black;
     text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    transition: all 0.6s ease-in-out;
 }
 
 @property --angle {
@@ -111,22 +119,27 @@ input, button, textarea, select {
     }
 }
 
+.get-started:hover {
+    scale: 1.1;
+}
+
 .features-flexbox {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     column-gap: 100px;
-    row-gap: 50px;
+    row-gap: 70px;
     margin-top: 80px; 
     margin-bottom: 50px;
 }
 
 .features-flexbox div {
     width: 22%;
-    height: 40vh;
+    aspect-ratio: 100/85;
     border-radius: 10px;
     position: relative;
+    transition: all 0.4s ease-in-out;
 }
 
 .features-flexbox div::before {
@@ -191,12 +204,12 @@ input, button, textarea, select {
 .about_APEX {
     width: 90%;
     border: 2px solid black;
-    box-shadow: 0 0 30px white inset;
+    box-shadow: 0 0 30px black inset;
     letter-spacing: 2px;
     position: relative;
     border-radius: 10px;
-    transition: all 0.4s ease-in-out;
-    background-color: #0f0f0f;
+    transition: all 0.6s ease-in-out;
+    background-color: #173753; /* #0f0f0f; */
     color: white;
 }
 
@@ -204,13 +217,13 @@ input, button, textarea, select {
     margin: 50px 0 0 50px;
     font-size: 35px;
     color: white;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.6s ease-in-out;
 }
 
 .about_description {
     margin: 30px 50px 30px 50px;
     font-size: 25px;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.6s ease-in-out;
 }
 
 .about_APEX::before {
@@ -222,9 +235,10 @@ input, button, textarea, select {
   height: 100%;
   border-radius: 10px;
   background-color: white;
-  box-shadow: 0 0 20px black inset;
-  transition: all 0.4s ease-in-out;
+  box-shadow: 0 0 30px black inset;
+  transition: all 0.6s ease-in-out;
   z-index: -1;
+  box-shadow: 0 0 10px black inset;
 }
 
 .about_APEX:hover::before {
@@ -242,13 +256,12 @@ input, button, textarea, select {
 }
 
 .team {
-    margin: 40px 0 40px 0;
+    margin: 60px 0 40px 0;
     width: 100%;
 }
 
 .our_team {
-    text-decoration: underline;
-    letter-spacing: 5px;
+    letter-spacing: 15px;
     color: rgb(38, 38, 38);
     font-size: 50px;
     margin-bottom: 50px;
@@ -270,10 +283,10 @@ input, button, textarea, select {
     color: rgb(0, 0, 0);
     border: 1px solid black;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px black inset, 5px 5px 5px black;
+    box-shadow: 0 0 25px black inset, 6px 6px 8px #6DAEDB;
     position: relative;
     transition: all 0.4s linear;
-    background-color: #0f0f0f;
+    background-color: #173753;
     color: white;
     overflow-wrap: break-word;
 }
@@ -285,7 +298,7 @@ input, button, textarea, select {
 
 .team_member:hover, .team_member:hover a {
     color: black;
-    scale: 1.02;
+    scale: 1.05;
     z-index: 10;
 }
 
@@ -298,6 +311,7 @@ input, button, textarea, select {
   height: 100%;
   border-radius: 10px;
   background-color: white;
+  box-shadow: 0 0 8px black inset, 4px 4px 5px black;
   z-index: -1;
   color: white;
   transition: all 0.4s ease-in-out;
