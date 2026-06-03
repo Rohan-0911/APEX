@@ -432,6 +432,7 @@ input, button, textarea, select {
 } */
 
 
+
 /* 4. Register */
 
 .register-main {
@@ -448,7 +449,7 @@ input, button, textarea, select {
     box-shadow: 0 0 10px black;
     border-radius: 20px;
     display: flex;
-    margin: 50px 0 25px 0;
+    margin: 50px 0 50px 0;
     padding: 20px;
     background-color: #FFFAFF;
 }
@@ -521,7 +522,7 @@ input, button, textarea, select {
     height: 120vh;
     width: 100%;
     background-color: rgba(0,0,0,0.5);
-    display: block;
+    display: none;
 }
 
 #registration-successful {
@@ -549,6 +550,8 @@ input, button, textarea, select {
 }
 
 #exit-register button {
+    border: none;
+    background-color: transparent;
 }
 
 #greeting-div {
