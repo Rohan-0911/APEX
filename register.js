@@ -18,5 +18,19 @@ function register_company(event) {
     else if (password !== c_password) {
         alert("Password does not match with Confirm Password");
         return;
-    }   
+    }
+
+    const user = {
+        Company_name: company_name,
+        Business: business_type,
+        Admin: admin_name,
+        Email: email,
+        Password: password
+    }
+    
+    const jsonString = JSON.stringify(user, null, 2);
+
+    localStorage.setItem(company_name, jsonString);
+
+    
 }
