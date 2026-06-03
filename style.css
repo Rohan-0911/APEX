@@ -444,7 +444,7 @@ input, button, textarea, select {
 
 .register-body {
     height: fit-content;
-    width: 65vw;
+    width: 70vw;
     box-shadow: 0 0 10px black;
     border-radius: 20px;
     display: flex;

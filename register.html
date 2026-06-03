@@ -35,9 +35,9 @@
                 </div>
                 <form class="register-form">
                     <label>Company Name:</label>
-                    <input id="name" type="text" required>
+                    <input id="company_name" type="text" required>
                     <label>Business: </label>
-                    <select name="businessType" id="businessType" required>
+                    <select name="business_type" id="business_type" required>
                         <option value="" selected>-- Choose an option --</option>
                         <option value="1">1. Medical Store</option>
                         <option value="2">2. Grocery Store</option>
@@ -54,10 +54,12 @@
                     <input id="password" type="password" required>
                     <label>Confirm Password:</label>
                     <input id="confirm-password" type="password" required>
-                        <button id="register-btn">Register</button>
+                        <button id="register-btn" type="submit" onclick="register_company(event)">Register</button>
                 </form>
             </div>
         </div>
     </main>
+
+    <script src="register.js"></script>
 </body>
 </html>
