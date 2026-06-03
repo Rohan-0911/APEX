@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo"> </div>
+            <a class="Dashboard">Dashboard</a>
+            <a href="invoice.html" class="create_invoice">Create Invoice</a>
+            <a href="inventory.html" class="inventory">Inventory</a>
+            <a href="index.html" class="logout">Logout</a>
+        </div>
+    </header>
+
+    <main>
+        <form>
+            <label for="select">Business Type</label>
+            <select name="businessType" id="businessType">
+                <option value="" selected>-- Choose an option --</option>
+                <option value="1">1. Medical Store</option>
+                <option value="2">2. Grocery Store</option>
+                <option value="3">3. Super Market</option>
+                <option value="4">4. Stationary</option>
+                <option value="5">5. Sports Shops</option>
+                <option value="6">6. Clothes</option>
+            </select>
+            <input type="submit" value="Submit">
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+### 2. High-Order Array Methods (The Engine)
+Instead of writing long `for` loops to search through your inventory, modern JavaScript uses built-in array methods. These are non-negotiable for manipulating your stock.
+* **`.push()`:** To **Add** a brand new item from your form into the `inventory` array.
+* **`.filter()`:** To **Delete** an item. (e.g., "Filter the array to keep everything *except* the item with ID 2").
+* **`.findIndex()`:** To **Modify/Edit** an item. You need to find exactly where "Paracetamol" lives in the array so you can change its price or update its stock quantity.
+* **`.map()`:** To take your raw data array and transform it into HTML elements (like table rows) to display on the screen.
+
+### 3. DOM Manipulation & Form Handling
+You need to capture what the user types into the "Add Item" form and then physically draw that data onto the screen as a table or a grid of cards.
+* **`event.preventDefault()`:** When a user submits an HTML form, the page naturally reloads. This command stops the reload so your JavaScript can process the data silently.
+* **`document.getElementById().value`:** To grab the name, price, and stock numbers the user typed.
+* **Template Literals (`` ` ``):** These backticks allow you to inject JavaScript variables directly into HTML strings, making it incredibly easy to create dynamic table rows (e.g., `<td>${item.name}</td>`).
+* **`innerHTML` vs. `createElement()`:** Learning how to clear the current table on the screen and re-render it with the updated inventory array.
+
+### 4. Data Persistence (JSON & Storage)
+Just like balancing deposit and withdrawal ledgers in a frontend banking simulation, your inventory data will vanish the second you refresh the page unless you store it somewhere.
+* **`JSON.stringify()` & `JSON.parse()`:** Local storage and databases generally transmit data as text. You must know how to convert your JavaScript array into a text string (`stringify`) to save it, and parse it back into a usable array when the page loads.
+* **`localStorage`:** You will use `localStorage.setItem()` and `getItem()` to temporarily build and test your complete inventory system locally before wiring it up to a real cloud database later.
+
+---
+
+Mastering these four areas will give you total control over the data flow on this page. 
+
+Which of these concepts feels the most unfamiliar, or would you like to start by designing the specific Object structure for an Apex inventory item?

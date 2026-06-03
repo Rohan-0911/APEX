@@ -20,6 +20,44 @@
         </div>
     </header>
 
-
+    <main class="register-main">
+        <div class="register-body">
+            <div class="register-welcome">
+                <div>
+                    <img src="/images/logo.png" height=120px width:120px>
+                    <p class="welcome-text">WELCOME TO<br>APEX</p>
+                    <p class="slogan">Precision In Every Peak</p>
+                </div>
+            </div>
+            <div class="register-card">
+                <div class="register-title">   
+                    <h1>REGISTER</h1>
+                </div>
+                <form class="register-form">
+                    <label>Company Name:</label>
+                    <input id="name" type="text" required>
+                    <label>Business: </label>
+                    <select name="businessType" id="businessType" required>
+                        <option value="" selected>-- Choose an option --</option>
+                        <option value="1">1. Medical Store</option>
+                        <option value="2">2. Grocery Store</option>
+                        <option value="3">3. Super Market</option>
+                        <option value="4">4. Stationary</option>
+                        <option value="5">5. Sports Shops</option>
+                        <option value="6">6. Clothes</option>
+                    </select>
+                    <label>Admin Name: </label>
+                    <input id="admin-name" type="text" required>
+                    <label>E-mail: </label>
+                    <input id="email" type="email" required>
+                    <label>Password: </label>
+                    <input id="password" type="password" required>
+                    <label>Confirm Password:</label>
+                    <input id="confirm-password" type="password" required>
+                        <button id="register-btn">Register</button>
+                </form>
+            </div>
+        </div>
+    </main>
 </body>
 </html>

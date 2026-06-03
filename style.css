@@ -89,6 +89,7 @@ input, button, textarea, select {
     background-color: transparent;
     border-radius: 50px;
     color: White;
+    text-decoration: none;
     font-size: 20px;
     box-shadow: 1px 1px 10px black;
     text-shadow: 0 2px 4px rgba(0,0,0,0.5);
@@ -429,3 +430,88 @@ input, button, textarea, select {
 .box:hover{
     transform:scale(1.1);
 } */
+
+
+/* 4. Register */
+
+.register-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    background: linear-gradient(to bottom,#2892D7,#ADD1EB,#FFFAFF);
+}
+
+.register-body {
+    height: fit-content;
+    width: 65vw;
+    box-shadow: 0 0 10px black;
+    border-radius: 20px;
+    display: flex;
+    margin: 50px 0 25px 0;
+    padding: 20px;
+    background-color: #FFFAFF;
+}
+
+.register-welcome {
+    width: 35%;
+    border: 2px solid black;
+    border-right: 1px solid #e2e8f0;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.welcome-text {
+    font-size: 40px;
+    font-weight: 600;
+    padding: 10px 20px 20px 20px;
+}
+
+.register-card {
+    width: 65%;
+    border: 2px solid black;
+    border-left: 0px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.register-title {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.register-form {
+    padding: 20px;
+}
+
+.register-form label {
+    display: block; 
+    margin-bottom: 5px; 
+    font-size: 14px;
+    color: #334155;
+}
+
+.register-form input, .register-form select {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+}
+
+#register-btn { 
+    width: 100%;   
+    margin: 20px 0 15px 0;
+    padding: 5px;
+    box-shadow: 0 0 2px #173753;
+    border-radius: 5px;
+    background-color: #2892d7;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
