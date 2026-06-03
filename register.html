@@ -24,7 +24,7 @@
         <div class="register-body">
             <div class="register-welcome">
                 <div>
-                    <img src="/images/logo.png" height=120px width:120px>
+                    <img src="/images/logo.png" height=120px width=120px>
                     <p class="welcome-text">WELCOME TO<br>APEX</p>
                     <p class="slogan">Precision In Every Peak</p>
                 </div>
@@ -56,6 +56,21 @@
                     <input id="confirm-password" type="password" required>
                         <button id="register-btn" type="submit" onclick="register_company(event)">Register</button>
                 </form>
+            </div>
+        </div>
+
+        <div id="registartion-successful-bg">
+            <div id="registration-successful">
+                <div id="exit-register">                
+                    <button onclick="close_reg_success_bg()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 20L4 4.00003M20 4L4.00002 20" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div>Registartion Successful!</div>
+                <div id="greeting-div"></div>
+                <div><a href="login.html">Click here to login</a></div>
             </div>
         </div>
     </main>

@@ -30,5 +30,22 @@ function register_company(event) {
     
     const jsonString = JSON.stringify(user, null, 2);
 
-    localStorage.setItem(company_name, jsonString);
+    localStorage.setItem(email, jsonString);
+
+    open_reg_success_bg(company_name);
+}
+
+function open_reg_success_bg(company_name) {
+
+    let registration_successful = document.getElementById("registartion-successful-bg");
+
+    registration_successful.style.display = "block";
+    let greet = document.getElementById("greeting-div");
+    greet.innerText = `${company_name} is successfully registered on APEX`;
+}
+
+function close_reg_success_bg() {
+    let registration_successful = document.getElementById("registartion-successful-bg");
+
+    registration_successful.style.display = "none";
 }

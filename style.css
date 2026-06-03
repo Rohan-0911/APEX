@@ -515,3 +515,47 @@ input, button, textarea, select {
     font-size: 20px;
     letter-spacing: 2px;
 }
+
+#registartion-successful-bg {
+    position: absolute;
+    height: 120vh;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: block;
+}
+
+#registration-successful {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    height: 250px;
+    width: 450px;
+    background-color: white;
+    border: 2px solid #173753;
+    border-radius: 10px;
+    text-align: center;
+    color: #2892D7;
+    font-size: 40px;
+    font-weight: 600;
+    padding: 20px;
+}
+
+#exit-register {
+    text-align: end;
+    width: 100%;
+    color: black;
+    font-size: 20px;
+}
+
+#exit-register button {
+}
+
+#greeting-div {
+    color: grey;
+    font-size: 15px;
+}
+
+#registration-successful div a {
+    font-size: 20px;
+}
