@@ -31,6 +31,4 @@ function register_company(event) {
     const jsonString = JSON.stringify(user, null, 2);
 
     localStorage.setItem(company_name, jsonString);
-
-    
 }
