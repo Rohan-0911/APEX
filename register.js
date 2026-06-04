@@ -169,10 +169,8 @@ function register_company(event) {
     
     const jsonString = JSON.stringify(user, null, 2);
 
-    alert("Hi");
     localStorage.setItem(email, jsonString);
     setupInventory(email, business_type);
-    alert("Bye");
 
     open_reg_success_bg(company_name);
 }
@@ -209,6 +207,4 @@ function setupInventory(email, businessType) {
 
     let inv_key = `${email}_inv`;
     localStorage.setItem(inv_key, JSON.stringify(defaultInventory));
-
-    alert(localStorage.getItem(inv_key));
 }
