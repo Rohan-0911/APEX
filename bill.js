@@ -10,8 +10,8 @@ if (!user) {
     let d = document.getElementById("date");
     let a_n = document.getElementById("admin-name"); 
     
-    let c_n = document.getElementById("customer-name"); 
-    let c_p = document.getElementById("customer-phone");
+    let c_n = document.getElementById("custumer-name"); 
+    let c_p = document.getElementById("custumer-phone");
 
     const businessCategories = {
         "1": "Medical Store", "2": "Grocery Store", "3": "Super Market",

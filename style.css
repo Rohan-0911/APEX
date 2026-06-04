@@ -630,7 +630,7 @@ input, button, textarea, select {
 
 /* 8. Bill */
 
-body {
+.bill-body {
     display: flex;
     justify-content: center;
 }

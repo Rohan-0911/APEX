@@ -125,110 +125,109 @@
             <ul id="domain_list">
                 </ul>
         </div>
-
+        <a href="bill.html">bill</a>
     </div>
 </div>
 
 
 
     <script>
-        
-
-        // const listitems = document.querySelectorAll('#domain_list li')
-
-        // search_item.addEventListener('input',function(){
-
-        //     let query = search_item.value.toLowerCase().trim();
-
-        //     listitems.forEach(function(item){
-        //         let itemText = item.innerText.toLowerCase();
-
-        //         if (itemText.includes(query))
-        //     {
-        //         item.style.display = "block";
-
-        //     }
-        //     else{
-        //         item.style.display = "none";
-        //     }
-        //     })
-        // })
-
         const search_item = document.getElementById('search_item');
 
-        let inv_key = "rohan09punekar@gmail.com_inv";
+// 1. Fixed camelCase on getItem
+let currentUser = localStorage.getItem("currentUser");
 
-        let inv_list = JSON.parse(localStorage.getItem(inv_key));
+// SAFETY NET: Kick them out if not logged in
+if (!currentUser) {
+    window.location.href = "login.html";
+}
 
-        let itemArray = Object.keys(inv_list);
+let inv_key = currentUser + "_inv";
 
-        let activeInvoice = {
-            customerName: "",
-            customerMobile: "",
-            purchasedItems: {} // This object needs to exist before you can add properties to it!
-        };
+// 2. SAFETY NET: Handle empty inventory gracefully
+let raw_inv_data = localStorage.getItem(inv_key);
+let inv_list = raw_inv_data ? JSON.parse(raw_inv_data) : {};
 
-        search_item.addEventListener('input',function(){
+let itemArray = Object.keys(inv_list);
 
-            let query = search_item.value.toLowerCase().trim();
+let activeInvoice = {
+    customerName: "",
+    customerMobile: "",
+    purchasedItems: {} 
+};
 
-            const domainListElement = document.getElementById('domain_list');
-            domainListElement.innerHTML = "";
+search_item.addEventListener('input', function() {
+    let query = search_item.value.toLowerCase().trim();
+    const domainListElement = document.getElementById('domain_list');
+    
+    // Clear the list every time the user types so it doesn't duplicate
+    domainListElement.innerHTML = "";
 
-            itemArray.forEach(function(productName){
-                let itemText = productName.toLowerCase();
+    // If the search box is empty, don't show the whole inventory
+    if (query === "") return;
 
-                if(itemText.includes(query)){
-                let item_dummy = document.createElement("li");
-                let text_span = document.createElement("span");
-                text_span.textContent = `${productName} - Rs.${inv_list[productName]}`;
+    itemArray.forEach(function(productName) {
+        let itemText = productName.toLowerCase();
 
-                let add_btn = document.createElement("span");
-                add_btn.textContent = "[+]";
-                add_btn.style.cursor = "pointer";
-                add_btn.style.fontWeight = "bold";
+        if (itemText.includes(query)) {
+            let item_dummy = document.createElement("li");
+            
+            let text_span = document.createElement("span");
+            text_span.textContent = `${productName} - Rs.${inv_list[productName]}`;
 
-                add_btn.addEventListener('click', function() {
-                    let currentName = document.getElementById("cust_name").value.trim();
-                    let currentMobile = document.getElementById("cust_mobile").value.trim();
+            let add_btn = document.createElement("span");
+            add_btn.textContent = " [+]";
+            add_btn.style.cursor = "pointer";
+            add_btn.style.fontWeight = "bold";
+            add_btn.style.color = "green"; // Added a little color to make it look like a button
 
-                    if (!currentName || !currentMobile) {
-                        alert("Please enter Customer Name and Mobile Number first before adding items!");
-                        return; 
-                    }
+            // The click event when they add an item to the bill
+            add_btn.addEventListener('click', function() {
+                let currentName = document.getElementById("cust_name").value.trim();
+                let currentMobile = document.getElementById("cust_mobile").value.trim();
 
-                    activeInvoice.customerName = currentName;
-                    activeInvoice.customerMobile = currentMobile;
-
-                    activeInvoice.purchasedItems[productName] = inv_list[productName];
-
-                    updateInvoiceDisplay();
-                });
-
-                item_dummy.append(text_span);
-                item_dummy.append(add_btn);
-
-                domainListElement.append(item_dummy);
+                if (!currentName || !currentMobile) {
+                    alert("Please enter Customer Name and Mobile Number first before adding items!");
+                    return; 
                 }
-            })
-        })
 
-        function updateInvoiceDisplay() {
-        let billListElement = document.getElementById("bill_list");
-        
-        billListElement.innerHTML = "";
+                activeInvoice.customerName = currentName;
+                activeInvoice.customerMobile = currentMobile;
 
-        let billItems = Object.keys(activeInvoice.purchasedItems);
+                localStorage.setItem("currentCust", currentName);
+                localStorage.setItem("cust_no", currentMobile);
 
-        billItems.forEach(function(itemName) {
-            let billItemRow = document.createElement("li");
-            
-            let itemPrice = activeInvoice.purchasedItems[itemName];
-            
-            billItemRow.textContent = `${itemName} - Rs.${itemPrice}`;
-            billListElement.append(billItemRow);
-        });
+                // Add item to the live object
+                activeInvoice.purchasedItems[productName] = inv_list[productName];
+
+                // 3. FIXED SAVE LOGIC: Stringify and save to Local Storage immediately!
+                let cust_key = currentName + "_inv";
+                localStorage.setItem(cust_key, JSON.stringify(activeInvoice.purchasedItems));
+
+                updateInvoiceDisplay();
+            });
+
+            item_dummy.append(text_span);
+            item_dummy.append(add_btn);
+            domainListElement.append(item_dummy);
         }
+    });
+});
+
+function updateInvoiceDisplay() {
+    let billListElement = document.getElementById("bill_list");
+    billListElement.innerHTML = "";
+
+    let billItems = Object.keys(activeInvoice.purchasedItems);
+
+    billItems.forEach(function(itemName) {
+        let billItemRow = document.createElement("li");
+        let itemPrice = activeInvoice.purchasedItems[itemName];
+        
+        billItemRow.textContent = `${itemName} - Rs.${itemPrice}`;
+        billListElement.append(billItemRow);
+    });
+}
     </script>
 </body>
 </html>
