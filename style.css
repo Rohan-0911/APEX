@@ -599,9 +599,27 @@ input, button, textarea, select {
 }
 
 .inv_list {
+    margin-top: 30px;
     display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.inv_list div {
+.inv_list div{
+    font-size: 20px;
+}
+
+#sr-no, #item_price {
     border: 1px solid black;
+    border-bottom: none;
+} 
+
+#item_name {
+    border-top: 1px solid black; 
+}
+
+#sr-no div, #item_name div, #item_price div {
+    border-bottom: 1px solid black;
+    padding: 10px 50px 10px 50px;
 }
