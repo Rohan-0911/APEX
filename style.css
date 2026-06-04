@@ -361,8 +361,6 @@ input, button, textarea, select {
   width: 100%;
 }
 
-
-
 /* 3 - Dash Board */
 
 .functions {
@@ -437,10 +435,9 @@ input, button, textarea, select {
 } */
 
 
+/* 4. Login & Register */
 
-/* 4. Register */
-
-.register-main {
+.register-main, .login-main {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -448,7 +445,7 @@ input, button, textarea, select {
     background: linear-gradient(to bottom,#2892D7,#ADD1EB,#FFFAFF);
 }
 
-.register-body {
+.register-body, .login-body {
     height: fit-content;
     width: 70vw;
     box-shadow: 0 0 10px black;
@@ -459,12 +456,13 @@ input, button, textarea, select {
     background-color: #FFFAFF;
 }
 
-.register-welcome {
+.register-welcome, .login-welcome {
     width: 35%;
     border: 2px solid black;
     border-right: 1px solid #e2e8f0;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
+    padding: 20px;
     text-align: center;
     display: flex;
     align-items: center;
@@ -476,7 +474,7 @@ input, button, textarea, select {
     padding: 10px 20px 20px 20px;
 }
 
-.register-card {
+.register-card, .login-card {
     width: 65%;
     border: 2px solid black;
     border-left: 0px;
@@ -484,24 +482,24 @@ input, button, textarea, select {
     border-bottom-right-radius: 20px;
 }
 
-.register-title {
+.register-title, .login-title {
     margin-top: 20px;
     display: flex;
     justify-content: center;
 }
 
-.register-form {
+.register-form, .login-form {
     padding: 20px;
 }
 
-.register-form label {
+.register-form label, .login-form label {
     display: block; 
     margin-bottom: 5px; 
     font-size: 14px;
     color: #334155;
 }
 
-.register-form input, .register-form select {
+.register-form input, .register-form select, .login-form input {
     display: block;
     width: 100%;
     margin-bottom: 20px;
@@ -510,7 +508,7 @@ input, button, textarea, select {
     border: 1px solid #cbd5e1;
 }
 
-#register-btn { 
+#register-btn, #login-btn { 
     width: 100%;   
     margin: 20px 0 15px 0;
     padding: 5px;
@@ -567,8 +565,6 @@ input, button, textarea, select {
 #registration-successful div a {
     font-size: 20px;
 }
-
-
 
 /* 6 Inventory */
 

@@ -20,7 +20,28 @@
         </div>
     </header>
 
-    <a href="dashboard.html">Dashboard</a>
+    <main class="login-main">
+        <div class="login-body">
+            <div class="login-welcome">
+                <div>
+                    <img src="/images/logo.png" height=120px width=120px>
+                    <p class="welcome-text">WELCOME TO<br>APEX</p>
+                    <p class="slogan">Precision In Every Peak</p>
+                </div>
+            </div>
+            <div class="login-card">
+                <div class="login-title"><h2>Login</h2></div>
+                <form class="login-form">
+                    <label>E-mail</label>
+                    <input id="login-email" type="email" required>
+                    <label>Password</label>
+                    <input id="login-password" type="password" reqquired>
+                    <button id="login-btn" onclick="login(event)">Login</button>
+                </form>
+            </div>
+        </div>
+    </main>
 
+    <script src="login.js"></script>
 </body>
 </html>
