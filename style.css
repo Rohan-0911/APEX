@@ -364,7 +364,7 @@ input, button, textarea, select {
 /* 3 - Dash Board */
 
 .functions {
-    margin: 130px 0 20px 0;
+    margin: 75px 0 20px 0;
     display:flex;
     justify-content:space-evenly;
 }
@@ -626,4 +626,11 @@ input, button, textarea, select {
 #sr-no div, #item_name div, #item_price div {
     border-bottom: 1px solid black;
     padding: 10px 50px 10px 50px;
+}
+
+/* 8. Bill */
+
+body {
+    display: flex;
+    justify-content: center;
 }
