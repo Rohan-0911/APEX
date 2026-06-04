@@ -22,10 +22,69 @@
     </header>
     <main class="inv-main">
         <div class="inv-title">INVENTORY</div>
+
         <div class="inv-edit">
-            <button id="inv-edit-btn">Edit</button>
-            <button id="inv_add">Add Item</button>
-            <button id="inv_delete">Delete Item</button>
+            <button id="inv-edit-btn" onclick="toggle_edit_price(event)">Edit Price</button>
+            <button id="inv_add" onclick="toggle_add_item(event)">Add Item</button>
+            <button id="inv_delete" onclick="toggle_del_item(event)">Delete Item</button>
+        </div>
+
+        <div id="edit-bg">
+            <div id="edit-panel">
+                <form>
+                    <div id="exit-register">                
+                        <button onclick="toggle_edit_price()">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 20L4 4.00003M20 4L4.00002 20" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <h2>EDIT PRICE</h2>
+                    <label>Sr.No.</label>
+                    <input id="get-no">
+                    <label>New Price</label>
+                    <input id="new-price">
+                    <button id="edit-price" onclick="edit_price(event)">Change</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="add-bg">
+            <div id="add-panel">
+                <form>
+                    <div id="exit-register">                
+                        <button onclick="toggle_add_item()">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 20L4 4.00003M20 4L4.00002 20" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <h2>ADD ITEMS</h2>
+                    <label>New Item Name</label>
+                    <input id="get-item">
+                    <label>New Item Price</label>
+                    <input id="add-price">
+                    <button id="add-item" onclick="add_item(event)">Add</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="del-bg">
+            <div id="del-panel">
+                <form>
+                    <div id="exit-register">                
+                        <button onclick="toggle_del_item()">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 20L4 4.00003M20 4L4.00002 20" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <h2>EDIT PRICE</h2>
+                    <label>Sr.No.</label>
+                    <input id="get-del-no">
+                    <button id="del-item" onclick="del_item(event)">Delete</button>
+                </form>
+            </div>
         </div>
         <div class="inv_list">
             <div id="sr-no">

@@ -598,6 +598,50 @@ input, button, textarea, select {
     color: white;
 }
 
+#edit-bg, #add-bg, #del-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 200vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+#edit-panel, #add-panel, #del-panel {
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    height: fit-content;
+    width: 300px;
+    background-color: white;
+    border: 5px double #173753;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#edit-panel label, #add-panel label, #del-panel label {
+    display: block;
+    padding: 10px 0 5px 0;
+}
+
+#edit-panel input, #add-panel input, #del-panel input {
+    text-align: center;
+    padding: 5px;
+}
+
+#edit-price, #add-item, #del-item {
+    display: block;
+    margin: 20px;
+    margin-left: 90px;
+    padding: 10px;
+    border: none;
+    color: white;
+    background-color: #2892D7;
+}
+
 .inv_list {
     margin-top: 30px;
     display: flex;
