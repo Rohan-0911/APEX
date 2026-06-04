@@ -380,7 +380,7 @@ input, button, textarea, select {
     border: 2px solid black;
     border-radius: 20px;
     position: relative;
-    background-color: white; /*#006aff;*/
+    background-color: #FFFAFF;
 }
 
 .functions div::before {
@@ -393,47 +393,11 @@ input, button, textarea, select {
     background: conic-gradient(from var(--angle), #006aff, white, white,#006aff);
     width: 100%;
     height: 100%;
-    padding: 8px;
+    padding: 6px;
     border-radius: 20px;
     z-index: -1;
     animation: spin 3s linear infinite;
 }
-
-/* .box{
-    display: flex;
-    justify-content: center;
-    height:200px;
-    width:200px;
-    background-color: #FFFAFF;
-    border-radius: 20px;
-    border: 2px solid #2892D7;
-    transition: transform 0.5s linear;
-}
-
-.minbox{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color:#6BADDB;
-    font-size: 25px;
-    position: relative;
-    top: 10px;
-    height:175px;
-    width:175px;
-    background-color: #FFFAFF;
-    border: 2px solid #2892D7;
-    border-radius: 20px;
-    transition: transform 0.5s linear;
-}
-
-.minbox:hover{
-    transform: scale(1.1);
-}
-
-.box:hover{
-    transform:scale(1.1);
-} */
-
 
 /* 4. Login & Register */
 

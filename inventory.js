@@ -16,10 +16,6 @@ function display_inv () {
     let item_name = document.getElementById("item_name");
     let item_price = document.getElementById("item_price");
 
-    no.innerHTML = "";
-    item_name.innerHTML = "";
-    item_price.innerHTML = "";
-
     for (let i=0; i<len; i++) {
         no_dummy = document.createElement("div");
         no_dummy.textContent = i+1;
@@ -86,6 +82,10 @@ function add_item(event){
     let jsonstring = JSON.stringify(inv_list);
     localStorage.setItem(inv_key, jsonstring);
     display_inv();
+
+    no.innerHTML = "";
+    item_name.innerHTML = "";
+    item_price.innerHTML = "";
 }
 
 function toggle_add_item(event) {
