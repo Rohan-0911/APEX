@@ -30,16 +30,60 @@
             list-style-type: none;
         }
 
-        #domain_list li{
-            border:1px solid black;
-            border-top: none;
-            width: 200px;
-            margin: 5px 0px 5px 0px;
-            text-align: center;
+        #domain_list li {
+        border: 1px solid black;
+        border-top: none;
+        width: 300px; 
+        margin: 5px 0px;
+        padding: 8px 12px; 
+        
+        
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
         }
 
         #search_item{
             width: 200px;
+        }
+
+        .split-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px; 
+            width: 800px; 
+        }
+
+        .panel {
+            background: #ffffff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            flex: 1; 
+        }
+
+        .input-group {
+            margin-bottom: 12px;
+            display: flex;
+            flex-direction: column;
+        }
+        .input-group label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .input-group input {
+            padding: 6px;
+            border: 1px solid #000;
+        }
+
+        #bill_list {
+            list-style-type: none;
+            padding: 0;
+        }
+        #bill_list li {
+            padding: 6px 0;
+            border-bottom: 1px dashed #ccc;
         }
     </style>
 </head>
@@ -55,54 +99,136 @@
     </header>
 
 
-    <div class="func_page">
-                <p>Search the item to be added in the inventory !!!</p>
-    </div>
     <div class="create">
-        <div>
-            <input type="text" id="search_item" class="search_item">
+    <div class="split-container">
+        
+        <div class="panel left-panel">
+            <h3>Customer Invoice Details</h3>
+            <div class="input-group">
+                <label>Customer Name:</label>
+                <input type="text" id="cust_name" placeholder="Enter name...">
+            </div>
+            <div class="input-group">
+                <label>Mobile Number:</label>
+                <input type="text" id="cust_mobile" placeholder="Enter mobile number...">
+            </div>
+
+            <h4>Current Items Added:</h4>
+            <ul id="bill_list">
+                </ul>
+        </div>
+
+        <div class="panel right-panel">
+            <h3>Search Inventory</h3>
+            <input type="text" id="search_item" class="search_item" placeholder="Type item name...">
 
             <ul id="domain_list">
-                <li>Web Development</li>
-                <li>App Development</li>
-                <li>Artificial Intelligence</li>
-                <li>Machine Learning</li>
-                <li>Computer Vision</li>
-                <li>Cloud Computing</li>
-                <li>Cyber Security</li>
-            </ul>
-
-
+                </ul>
         </div>
-        
-
 
     </div>
+</div>
 
 
 
     <script>
+        
+
+        // const listitems = document.querySelectorAll('#domain_list li')
+
+        // search_item.addEventListener('input',function(){
+
+        //     let query = search_item.value.toLowerCase().trim();
+
+        //     listitems.forEach(function(item){
+        //         let itemText = item.innerText.toLowerCase();
+
+        //         if (itemText.includes(query))
+        //     {
+        //         item.style.display = "block";
+
+        //     }
+        //     else{
+        //         item.style.display = "none";
+        //     }
+        //     })
+        // })
+
         const search_item = document.getElementById('search_item');
 
-        const listitems = document.querySelectorAll('#domain_list li')
+        let inv_key = "rohan09punekar@gmail.com_inv";
+
+        let inv_list = JSON.parse(localStorage.getItem(inv_key));
+
+        let itemArray = Object.keys(inv_list);
+
+        let activeInvoice = {
+            customerName: "",
+            customerMobile: "",
+            purchasedItems: {} // This object needs to exist before you can add properties to it!
+        };
 
         search_item.addEventListener('input',function(){
 
             let query = search_item.value.toLowerCase().trim();
 
-            listitems.forEach(function(item){
-                let itemText = item.innerText.toLowerCase();
+            const domainListElement = document.getElementById('domain_list');
+            domainListElement.innerHTML = "";
 
-                if (itemText.includes(query))
-            {
-                item.style.display = "block";
+            itemArray.forEach(function(productName){
+                let itemText = productName.toLowerCase();
 
-            }
-            else{
-                item.style.display = "none";
-            }
+                if(itemText.includes(query)){
+                let item_dummy = document.createElement("li");
+                let text_span = document.createElement("span");
+                text_span.textContent = `${productName} - Rs.${inv_list[productName]}`;
+
+                let add_btn = document.createElement("span");
+                add_btn.textContent = "[+]";
+                add_btn.style.cursor = "pointer";
+                add_btn.style.fontWeight = "bold";
+
+                add_btn.addEventListener('click', function() {
+                    let currentName = document.getElementById("cust_name").value.trim();
+                    let currentMobile = document.getElementById("cust_mobile").value.trim();
+
+                    if (!currentName || !currentMobile) {
+                        alert("Please enter Customer Name and Mobile Number first before adding items!");
+                        return; 
+                    }
+
+                    activeInvoice.customerName = currentName;
+                    activeInvoice.customerMobile = currentMobile;
+
+                    activeInvoice.purchasedItems[productName] = inv_list[productName];
+
+                    updateInvoiceDisplay();
+                });
+
+                item_dummy.append(text_span);
+                item_dummy.append(add_btn);
+
+                domainListElement.append(item_dummy);
+                }
             })
         })
+
+        function updateInvoiceDisplay() {
+        let billListElement = document.getElementById("bill_list");
+        
+        billListElement.innerHTML = "";
+
+        let billItems = Object.keys(activeInvoice.purchasedItems);
+
+        billItems.forEach(function(itemName) {
+            let billItemRow = document.createElement("li");
+            
+            let itemPrice = activeInvoice.purchasedItems[itemName];
+            
+            billItemRow.textContent = `${itemName} - Rs.${itemPrice}`;
+            billListElement.append(billItemRow);
+        });
+        }
     </script>
 </body>
 </html>
