@@ -517,9 +517,9 @@ input, button, textarea, select {
     letter-spacing: 2px;
 }
 
-#registartion-successful-bg {
+#registration-successful-bg {
     position: absolute;
-    height: 120vh;
+    height: 124vh;
     width: 100%;
     background-color: rgba(0,0,0,0.5);
     display: none;

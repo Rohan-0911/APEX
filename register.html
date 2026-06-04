@@ -33,7 +33,7 @@
                 <div class="register-title">   
                     <h1>REGISTER</h1>
                 </div>
-                <form class="register-form">
+                <form class="register-form" onsubmit="register_company(event)">
                     <label>Company Name:</label>
                     <input id="company_name" type="text" required>
                     <label>Business: </label>
@@ -45,21 +45,21 @@
                         <option value="4">4. Stationary</option>
                         <option value="5">5. Sports Shops</option>
                         <option value="6">6. Clothes</option>
-                    </select>
+                    </select>                    
                     <label>Admin Name: </label>
                     <input id="admin-name" type="text" required>
                     <label>E-mail: </label>
                     <input id="email" type="email" required>
-                    <label>Password: </label>
+                   <label>Password: </label>
                     <input id="password" type="password" required>
                     <label>Confirm Password:</label>
                     <input id="confirm-password" type="password" required>
-                        <button id="register-btn" type="submit" onclick="register_company(event)">Register</button>
+                    <button id="register-btn" type="submit">Register</button>
                 </form>
             </div>
         </div>
 
-        <div id="registartion-successful-bg">
+        <div id="registration-successful-bg">
             <div id="registration-successful">
                 <div id="exit-register">                
                     <button onclick="close_reg_success_bg()">
