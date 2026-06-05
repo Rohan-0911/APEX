@@ -596,3 +596,9 @@ input, button, textarea, select {
     display: flex;
     justify-content: center;
 }
+
+.bill-body main {
+    border: 1px solid black;
+    margin-top: 30px;
+    padding: 30px;
+}
